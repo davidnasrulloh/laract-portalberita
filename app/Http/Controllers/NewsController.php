@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\News;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class NewsController extends Controller
 {
@@ -14,7 +15,12 @@ class NewsController extends Controller
      */
     public function index()
     {
-        //
+        $news = News::all();
+        return Inertia::render('Homepage', [
+            'title' => "Dave Universe",
+            'description' => 'Selamat datang di Dave Universe News Portal',
+            'news' => $news,
+        ]);
     }
 
     /**

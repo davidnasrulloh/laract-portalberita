@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -16,12 +17,14 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
-    return Inertia::render('Homepage', [
-        'title' => "CuyNews Homepage",
-        'description' => "Selamat datang di portal berita cuy universe"
-    ]);
-});
+Route::get('/', [NewsController::class, 'index']);
+
+// Route::get('/', function () {
+//     return Inertia::render('Homepage', [
+//         'title' => "CuyNews Homepage",
+//         'description' => "Selamat datang di portal berita cuy universe"
+//     ]);
+// });
 
 Route::get('/welcome', function () {
     return Inertia::render('Welcome', [
