@@ -10,9 +10,7 @@ const Paginator = ({ meta }) => {
         <div className="btn-group">
             {prev && <Link href={prev} className="btn btn-outline">«</Link>}
             <Link className="btn btn-outline">{current}</Link>
-
             {next && <Link href={next} className="btn btn-outline">»</Link>}
-
         </div>
     )
 }
